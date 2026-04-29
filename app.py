@@ -41,10 +41,16 @@ def ask(filename: str, question: str):
     {question}
     """
 
-    # NOTE: Ollama works locally only
     answer_text = f"(Demo mode)\n\n{context}"
 
     return {
         "answer": answer_text,
         "sources": context_chunks
     }
+
+if __name__ == "__main__":
+    import uvicorn
+    import os
+
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
