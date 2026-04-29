@@ -32,7 +32,7 @@ def ask(filename: str, question: str):
     context = "\n".join(context_chunks)
 
     prompt = f"""
-    Answer ONLY using the context below.
+    Answer using the contexts provided below
 
     Context:
     {context}
